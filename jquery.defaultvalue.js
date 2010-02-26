@@ -28,33 +28,51 @@
  * @return		Array
  */
 (function($) {
-	
-	$.fn.defaultvalue = function() {
-		
-		// Scope
-		var elements = this;
-		var args = arguments;
-		var c = 0;
-		
-		return(
-			elements.each(function() {				
-				
-				// Default values within scope
-				var el = $(this);
-				var def = args[c++];
 
-				el.val(def).focus(function() {
-					if(el.val() == def) {
-						el.val("");
-					}
-					el.blur(function() {
-						if(el.val() == "") {
-							el.val(def);
-						}
-					});
-				});
-				
-			})
-		);
-	}
+  // $.fn.defaultValue = function(value){
+  //   $(this).val(value);
+  //   
+  //   $(this).focus(function(){
+  //     if($(this).val() == value){
+  //       $(this).val("");
+  //     }
+  //   });
+  //   
+  //   $(this).blur(function(){
+  //     if($(this).val() == "") {
+  //       $(this).val(value);
+  //     }
+  //   });
+  // };
+
+  $.fn.defaultValue = function() {
+   
+   // Scope
+   var elements = this;
+   var args = arguments;
+   var c = 0;
+   
+   return(
+     elements.each(function() {        
+       
+       // Default values within scope
+       var el = $(this);
+       var def = args[c++];
+  
+       el.val(def).focus(function() {
+         if(el.val() == def) {
+           el.val("");
+         }
+         el.blur(function() {
+           if(el.val() == "") {
+             el.val(def);
+           }
+         });
+       });
+       
+     })
+   );
+  };
+  
+  $.fn.defaultvalue = $.fn.defaultValue;
 })(jQuery)
