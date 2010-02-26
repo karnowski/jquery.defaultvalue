@@ -29,22 +29,6 @@
  */
 (function($) {
 
-  // $.fn.defaultValue = function(value){
-  //   $(this).val(value);
-  //   
-  //   $(this).focus(function(){
-  //     if($(this).val() == value){
-  //       $(this).val("");
-  //     }
-  //   });
-  //   
-  //   $(this).blur(function(){
-  //     if($(this).val() == "") {
-  //       $(this).val(value);
-  //     }
-  //   });
-  // };
-
   $.fn.defaultValue = function() {
    
    // Scope
